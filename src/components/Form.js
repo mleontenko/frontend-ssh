@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import axios from 'axios';
 
 const Form = () => {
     const [ip, setIp] = useState('')
@@ -10,6 +11,18 @@ const Form = () => {
         console.log(ip);
         console.log(username);
         console.log(password);
+
+        axios.post('http://localhost:5000', {
+            ip: ip,
+            username: username,
+            password: password
+            })
+            .then(function (response) {
+            console.log(response.data);
+            })
+            .catch(function (error) {
+            console.log(error);
+            });
     }
 
     return (
