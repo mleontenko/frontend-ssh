@@ -22,7 +22,8 @@ const Form = ({ setProc, setShowLoading }) => {
             })
             .catch(function (error) {
             console.log(error);
-            setShowLoading(false)
+            setShowLoading(false);
+            setProc([]);
             });
     }
 
