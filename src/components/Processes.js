@@ -2,9 +2,18 @@ import Process from './Process'
 
 const Processes = ({ procs }) => {
     return (
-        <div>
-            {procs.map((proc, index)=>(<Process key={index} process={proc['COMMAND']} />))}
-        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>PID</th>
+                <th>COMMAND</th>
+                <th>%CPU</th>
+            </tr>
+            </thead>
+            <tbody>
+            {procs.map((proc, index)=>(<Process key={index} pid={proc['PID']} process={proc['COMMAND']} cpu={proc['%CPU']} />))}
+            </tbody>
+        </table>
     )
 }
 

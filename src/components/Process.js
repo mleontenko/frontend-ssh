@@ -1,6 +1,10 @@
-const Process = ({ process }) => {
+const Process = ({ pid, process, cpu }) => {
     return (
-        <p>{process}</p>
+        <tr>
+            <td>{pid}</td>
+            <td>{process}</td>
+            <td>{cpu}</td>
+        </tr>
     )
 }
 
