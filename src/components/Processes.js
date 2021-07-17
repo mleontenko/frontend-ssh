@@ -2,12 +2,12 @@ import Process from './Process'
 
 const Processes = ({ procs }) => {
     return (
-        <table>
+        <table className="table table-striped table-sm table-hover">
             <thead>
             <tr>
-                <th>PID</th>
-                <th>COMMAND</th>
-                <th>%CPU</th>
+                <th title = "ID procesa" >PID</th>
+                <th title = "Naziv procesa">COMMAND</th>
+                <th title = "CPU korištenje">%CPU</th>
             </tr>
             </thead>
             <tbody>
