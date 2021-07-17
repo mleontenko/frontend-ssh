@@ -1,24 +1,22 @@
 import { useState } from 'react'
 import axios from 'axios';
 
-const Form = () => {
+const Form = ({ setProc }) => {
     const [ip, setIp] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
     const onSubmit = (e) => {
         e.preventDefault()
-        console.log(ip);
-        console.log(username);
-        console.log(password);
-
+        
         axios.post('http://localhost:5000', {
             ip: ip,
             username: username,
             password: password
             })
             .then(function (response) {
-            console.log(response.data);
+            //response.data.forEach(element => console.log(element['COMMAND']));
+            setProc(response.data)
             })
             .catch(function (error) {
             console.log(error);
