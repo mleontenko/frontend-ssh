@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import axios from 'axios';
 
-const Form = ({ setProc }) => {
+const Form = ({ setProc, setShowLoading }) => {
     const [ip, setIp] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
     const onSubmit = (e) => {
         e.preventDefault()
+        setShowLoading(true)
         
         axios.post('http://localhost:5000', {
             ip: ip,
@@ -17,9 +18,11 @@ const Form = ({ setProc }) => {
             .then(function (response) {
             //response.data.forEach(element => console.log(element['COMMAND']));
             setProc(response.data)
+            setShowLoading(false)
             })
             .catch(function (error) {
             console.log(error);
+            setShowLoading(false)
             });
     }
 
