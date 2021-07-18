@@ -31,15 +31,15 @@ const Form = ({ setProc, setShowLoading }) => {
         <form className='add-form' onSubmit={onSubmit}>
             <div className='mb-3'>
                 <label htmlFor="ipaddress" className="form-label">IP adresa:</label>
-                <input type='text' id="ipaddress" className="form-control" value={ip} onChange={(e) => setIp(e.target.value)} />
+                <input type='text' id="ipaddress" className="form-control" value={ip} onChange={(e) => setIp(e.target.value)} required />
             </div>
             <div className='mb-3'>
                 <label htmlFor="username" className="form-label">Korisničko ime:</label>
-                <input type='text' id="username" className="form-control" value={username} onChange={(e) => setUsername(e.target.value)} />
+                <input type='text' id="username" className="form-control" value={username} onChange={(e) => setUsername(e.target.value)} required />
             </div>
             <div className='mb-3'>
                 <label htmlFor="password" className="form-label">Lozinka:</label>
-                <input type='password' id="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <input type='password' id="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} required/>
             </div>
             <input type='submit' value='Pošalji' className='btn btn-primary' />
         </form>
